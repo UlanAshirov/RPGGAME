@@ -12,6 +12,9 @@ public class HomeWork1 {
 
         //Создать переменную “word” типа String с любым значением
         String word = "Жаки, когда бухать?";
+        String word1 = "Жаки, когда бухать?";
+        String word2 = "Жаки, когда бухать?";
+        String word3 = "Жаки, когда бухать?";
 
         //Задать значение переменной объявленной в самом начале, которое состояло бы
         //из результата конкатенации константы “num” и переменной “word”
@@ -26,13 +29,13 @@ public class HomeWork1 {
         // “Вы сохранили отрицательное число”, если же значение больше нуля -
         // “Вы сохранили положительное число”, иначе - “Вы сохранили нуль”
 
-        if (num < 0) {
+       // if (num < 0) {
             System.out.println("Вы сохранили отрицательное число");
 
-        } else if (num > 0) {
+       // } else if (num > 0) {
             System.out.println("Вы сохранили положительное число");
 
-        } else {
+       // } else {
             System.out.println("Вы сохранили нуль");
 
         }
@@ -42,14 +45,14 @@ public class HomeWork1 {
         //- Затем считывала имя пользователя, введенное с клавиатуры
         //- И в конце здоровалась с пользователем по имени
 
-        Scanner scanner = new Scanner(System.in);
+       /* Scanner scanner = new Scanner(System.in);
         System.out.println("Введите ваше имя");
         String name = scanner.nextLine();
         System.out.println("Здравствуйте " + name);
         System.out.println("Здравствуйте " + name);
-        System.out.println("Здравствуйте " + name);
+        System.out.println("Здравствуйте " + name);*/
 
 
 
     }
-}
+//}

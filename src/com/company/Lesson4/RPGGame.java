@@ -1,5 +1,8 @@
 package com.company.Lesson4;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class RPGGame {
@@ -10,7 +13,6 @@ public class RPGGame {
     public static int[] heroesHealth = {270, 260, 250, 240, 230};
     public static int[] heroesDamage = {25, 15, 20, 30, 0};
     public static String[] heroesAttackType = {"Physical", "Magical", "Kinetic", "Archer", "Doctor"};
-    public static int doctorHill = 0;
     public static int roundCounter = 0;
 
     public static void main(String[] args) {
@@ -31,17 +33,19 @@ public class RPGGame {
     }
 
     public static void doctorHill() {
-        for (int i = 0; i < heroesHealth.length; i++) {
-            if (heroesAttackType[i].equals("Doctor")) {
-                int randomHill = new Random().nextInt(100);
-                int randomIndex = new Random().nextInt(heroesHealth.length);
-                if (heroesHealth[i] < 100) {
-                    heroesHealth[i] = heroesHealth[randomIndex] + randomHill;
+        int randomHill = new Random().nextInt(50);
+        if (heroesHealth[heroesAttackType.length - 1] > 0) {
+            for (int i = 0; i < heroesAttackType.length - 1; i++) {
+                if (heroesHealth[i] <= 100) {
+                    heroesHealth[i] += randomHill;
+                    System.out.println("Medic healed " + heroesAttackType[i] + " / " + randomHill);
+                    break;
                 }
-                System.out.println("Doctor hills hp + " + randomHill);
             }
         }
     }
+
+
 
     public static void changeDefenceType() {
         Random random = new Random();
@@ -83,19 +87,10 @@ public class RPGGame {
                 } else {
                     bossHealth = bossHealth - heroesDamage[i];
                 }
-
-            } else {
-                if (bossHealth - heroesDamage[i] < 0) {
-                    bossHealth = 0;
-                } else {
-                    bossHealth = bossHealth - heroesDamage[i];
-                }
-                if (heroesHealth[i] < 0) {
-                    System.out.println(heroesDamage[i] == 0);
-                }
             }
         }
     }
+
 
     public static boolean isGameOver() {
         if (bossHealth <= 0) {
